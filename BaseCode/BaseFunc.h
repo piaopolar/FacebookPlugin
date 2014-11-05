@@ -68,6 +68,7 @@ void NodeSetText(CCLabelTTF* pNode, int nValue, bool bShowZero = true, bool bNee
 void NodeSetText(MyEditBox* pNode, int nValue, bool bShowZero = true, bool bNeedSign = false);
 CCSprite* SpriteCreate(const char *pszName = NULL);
 CCScale9Sprite* Scale9SpriteCreate(const char *pszName);
+bool ScreenShot( const char *pszFileName );
 
 #define CREATE_FUNC_INT(__TYPE__) \
 static __TYPE__* create(int __Argv) \

@@ -1,7 +1,10 @@
 #include "AppDelegate.h"
+#include "UIMgr.h"
 #include "HelloWorldScene.h"
+#include "UIEditor.h"
 
 USING_NS_CC;
+
 
 AppDelegate::AppDelegate() {
 
@@ -19,16 +22,25 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setOpenGLView(pEGLView);
 	
     // turn on display FPS
-    pDirector->setDisplayStats(true);
+//  pDirector->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
 
-    // create a scene. it's an autorelease object
-    CCScene *pScene = HelloWorld::scene();
+	UIMgr::GetInstance()->SetSceneFactory(CSceneFactory::GetInstance());
+	UIMgr::GetInstance()->SetMultiResolutionPolicy(MULTIRESOLUTION_POLICY_BASEPOINT);
+
+	auto size = pEGLView->getFrameSize();
+	UIMgr::GetInstance()->SetDeviceSize(size.width, size.height);
+	UIMgr::GetInstance()->SetConfigSize(960, 640);
 
     // run
-    pDirector->runWithScene(pScene);
+	RUN_WITH_SCENE(HelloWorldScene);
+	
+#if EDITOR_UI
+	auto pLayer = EditorLayer::create();
+	UIMgr::GetInstance()->AddTopLayer(pLayer, TOP_LAYER_GROUP_EDITOR);
+#endif
 
     return true;
 }

@@ -78,6 +78,12 @@ enum
 	ACTION_TAG_ANIMATION,
 };
 
+enum
+{
+	MULTIRESOLUTION_POLICY_LACE,
+	MULTIRESOLUTION_POLICY_BASEPOINT,
+};
+
 class QMyGroupNode : public CCNode
 {
 public:
@@ -187,11 +193,14 @@ public:
 	void CalcuNewPos(const CCPoint& rPtOld, CCPoint& rPtNew, int nBasePoint);
 	void SetConfigSize(float fWidth, float fHeight);
 	void SetDeviceSize(float fScrWidth, float fScrHeight);
+	void SetMultiResolutionPolicy(int nType);
 	void ManageNodeResolution(CCNode *pNode, int nBasePoint);
-
+	
+	int GetMultiResolutionPolicy(void) const;
 	CCSize GetSizeConfig(void) const;
 	CCSize GetWinSize(void) const;
 private:
+	int m_nMultiResolutionPolicy;
 	CCSize m_sizeConfig;
 	CCSize m_sizeDevice;
 

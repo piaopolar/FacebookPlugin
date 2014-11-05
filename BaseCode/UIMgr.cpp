@@ -120,6 +120,7 @@ UIMgr::UIMgr(void)
 	m_sizeDevice.setSize(640, 960);
 	m_pCCImpl = new MyCCOjbectImpl;
 	m_pSceneFactoryImpl = NULL;
+	m_nMultiResolutionPolicy = MULTIRESOLUTION_POLICY_LACE;
 }
 
 UIMgr::~UIMgr(void)
@@ -1636,6 +1637,16 @@ void UIMgr::ManageNodeResolution( CCNode *pNode, int nBasePoint )
 	CCPoint ptNew;
 	this->CalcuNewPos(pt, ptNew, nBasePoint);
 	this->NodePositionMove(pNode, ptNew - pt);
+}
+
+int UIMgr::GetMultiResolutionPolicy( void ) const
+{
+	return m_nMultiResolutionPolicy;
+}
+
+void UIMgr::SetMultiResolutionPolicy( int nType )
+{
+	m_nMultiResolutionPolicy = nType;
 }
 
 void UIMgr::SetSceneFactory( ISceneFactory* pSceneFactory )

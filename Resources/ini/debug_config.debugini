@@ -1,0 +1,21 @@
+﻿;for debug 
+[server]
+;ip=
+;port=
+
+[Sim]
+Width=960
+Height=640
+
+
+;iPad 1/2/Mini 1024*768 iPad 3/4 2048*1536  4:3
+;Height=600
+;Width=450
+
+;iPhone 1/3G/3GS 480*320  4/4S 960x640  3:2
+;Height=600
+;Width=400
+
+;Phone 5/5s/5c 1136*640 
+;Height=568
+;Width=320

@@ -13,9 +13,14 @@ MyScene::MyScene()
 {
 	m_nTopLayerEnabledMask = TOP_LAYER_GROUP_MASK_ALL;
 	m_nInitData = 0;
-	m_bLaceEnabled = true;
 
-	m_pLayout = CCNode::create();
+	if (MULTIRESOLUTION_POLICY_LACE == UIMgr::GetInstance()->GetMultiResolutionPolicy()) {
+		m_bLaceEnabled = true;
+	} else {
+		m_bLaceEnabled = false;
+	}
+
+	m_pLayout = NULL;
 }
 
 void MyScene::onEnter()
@@ -68,11 +73,13 @@ bool MyScene::OnInit( void )
 	CCSize sizeDevice = CCDirector::sharedDirector()->getWinSize();
 	CCSize sizeCong = UIMgr::GetInstance()->GetSizeConfig();
 
-	if (m_pLayout) {
-		CCNode::addChild(m_pLayout, m_pLayout->getZOrder(), m_pLayout->getTag());
+	if (m_bLaceEnabled) {
+		m_pLayout = CCNode::create();
 	}
 
-	if (m_bLaceEnabled) {
+	if (m_pLayout) {
+		CCNode::addChild(m_pLayout, m_pLayout->getZOrder(), m_pLayout->getTag());
+
 		if (sizeDevice.height / sizeDevice.width >= 1.5) {
 			auto pTop = UIMgr::GetInstance()->CreateConfigNode("LaceTop");
 			UIMgr::GetInstance()->NodePositionMove(pTop, ccp(sizeDevice.width / 2, (sizeDevice.height + sizeCong.height) / 2));
@@ -90,9 +97,9 @@ bool MyScene::OnInit( void )
 			UIMgr::GetInstance()->NodePositionMove(pRight, ccp((sizeDevice.width + sizeCong.width) / 2, sizeDevice.height / 2));
 			CCNode::addChild(pRight, pRight->getZOrder(), pRight->getTag());
 		}
+
+		UIMgr::GetInstance()->NodePositionMove(m_pLayout, ccp((sizeDevice.width - sizeCong.width) / 2, (sizeDevice.height - sizeCong.height) / 2));
 	}
-	
-	UIMgr::GetInstance()->NodePositionMove(m_pLayout, ccp((sizeDevice.width - sizeCong.width) / 2, (sizeDevice.height - sizeCong.height) / 2));
 
 	return true;
 }
@@ -113,6 +120,8 @@ void MyScene::addChild( CCNode* child, int zOrder, int tag )
 {
 	if (m_pLayout) {
 		m_pLayout->addChild(child, zOrder, tag);
+	} else {
+		CCNode::addChild(child, zOrder, tag);
 	}
 }
 
@@ -123,30 +132,24 @@ void MyScene::removeChild(CCNode * child)
 
 void MyScene::removeChild(CCNode* child, bool cleanup)
 {
-	if (m_pLayout == NULL)
-	{
-		return;
+	if (m_pLayout) {
+		m_pLayout->removeChild(child, cleanup);
+	} else {
+		CCNode::removeChild(child, cleanup);
 	}
-
-	m_pLayout->removeChild(child, cleanup);
 }
 
-void MyScene::removeChildByTag(int tag)
+CCNode* MyScene::getChildByTag( int tag )
 {
-	this->removeChildByTag(tag, true);
-}
-
-void MyScene::removeChildByTag(int tag, bool cleanup)
-{
-	if (m_pLayout == NULL)
-	{
-		return;
+	if (m_pLayout) {
+		return m_pLayout->getChildByTag(tag);
 	}
 
-	m_pLayout->removeChildByTag(tag, cleanup);
+	return CCNode::getChildByTag(tag);
 }
 
 void MyScene::EnableLace( bool bLaceEnabled )
 {
 	m_bLaceEnabled = bLaceEnabled;
 }
+

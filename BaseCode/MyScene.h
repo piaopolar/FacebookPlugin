@@ -25,8 +25,8 @@ public:
 
 	virtual void removeChild(CCNode * child);
 	virtual void removeChild(CCNode* child, bool cleanup);
-	virtual void removeChildByTag(int tag);
-	virtual void removeChildByTag(int tag, bool cleanup);
+
+	virtual CCNode* getChildByTag(int tag);
 	
 	void EnableLace(bool bLaceEnabled);
 	void EnableTopLayer(int nEnabledGroupMask);

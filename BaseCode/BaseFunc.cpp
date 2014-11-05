@@ -811,3 +811,14 @@ CCSprite* SpriteCreate( const char *pszName )
 
 	return CCSprite::create(pszName);
 }
+
+bool ScreenShot( const char *pszFileName )
+{
+	CCSize size = CCDirector::sharedDirector()->getWinSize();
+	CCRenderTexture* texture = CCRenderTexture::create((int)size.width, (int)size.height, kCCTexture2DPixelFormat_RGBA8888);      
+	texture->setPosition(ccp(size.width/2, size.height/2));      
+	texture->begin();  
+	CCDirector::sharedDirector()->getRunningScene()->visit();  
+	texture->end();
+	return texture->saveToFile(pszFileName, kCCImageFormatJPEG);   
+}
