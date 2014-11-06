@@ -249,6 +249,9 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		601323BF1A0B05FB00176204 /* SceneFactoryImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 601323BD1A0B05FB00176204 /* SceneFactoryImpl.cpp */; };
 		601323C11A0B069500176204 /* ini in Resources */ = {isa = PBXBuildFile; fileRef = 601323C01A0B069500176204 /* ini */; };
+		60D38C311A0B72A900DCE68E /* FacebookInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60D38C2E1A0B72A900DCE68E /* FacebookInterface.mm */; };
+		60D38C321A0B72A900DCE68E /* FacebookMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60D38C2F1A0B72A900DCE68E /* FacebookMgr.cpp */; };
+		60D38C341A0B73C100DCE68E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D38C331A0B73C100DCE68E /* FacebookSDK.framework */; };
 		60FD01FB1A0A2AAC002DF8DA /* BaseFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01CB1A0A2AAC002DF8DA /* BaseFunc.cpp */; };
 		60FD01FC1A0A2AAC002DF8DA /* IniMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01CD1A0A2AAC002DF8DA /* IniMgr.cpp */; };
 		60FD01FD1A0A2AAC002DF8DA /* MyActionInterval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01CF1A0A2AAC002DF8DA /* MyActionInterval.cpp */; };
@@ -810,6 +813,11 @@
 		601323BD1A0B05FB00176204 /* SceneFactoryImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneFactoryImpl.cpp; sourceTree = "<group>"; };
 		601323BE1A0B05FB00176204 /* SceneFactoryImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneFactoryImpl.h; sourceTree = "<group>"; };
 		601323C01A0B069500176204 /* ini */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ini; sourceTree = "<group>"; };
+		60D38C2D1A0B72A900DCE68E /* FacebookInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookInterface.h; sourceTree = "<group>"; };
+		60D38C2E1A0B72A900DCE68E /* FacebookInterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FacebookInterface.mm; sourceTree = "<group>"; };
+		60D38C2F1A0B72A900DCE68E /* FacebookMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FacebookMgr.cpp; sourceTree = "<group>"; };
+		60D38C301A0B72A900DCE68E /* FacebookMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookMgr.h; sourceTree = "<group>"; };
+		60D38C331A0B73C100DCE68E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		60FD01CA1A0A2AAC002DF8DA /* BaseDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseDef.h; path = ../BaseCode/BaseDef.h; sourceTree = "<group>"; };
 		60FD01CB1A0A2AAC002DF8DA /* BaseFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseFunc.cpp; path = ../BaseCode/BaseFunc.cpp; sourceTree = "<group>"; };
 		60FD01CC1A0A2AAC002DF8DA /* BaseFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseFunc.h; path = ../BaseCode/BaseFunc.h; sourceTree = "<group>"; };
@@ -893,6 +901,7 @@
 				D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
 				1AB8703C175E0A92005D39BF /* libwebsockets.a in Frameworks */,
+				60D38C341A0B73C100DCE68E /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1397,6 +1406,10 @@
 				60FD01CA1A0A2AAC002DF8DA /* BaseDef.h */,
 				60FD01CB1A0A2AAC002DF8DA /* BaseFunc.cpp */,
 				60FD01CC1A0A2AAC002DF8DA /* BaseFunc.h */,
+				60D38C2D1A0B72A900DCE68E /* FacebookInterface.h */,
+				60D38C2E1A0B72A900DCE68E /* FacebookInterface.mm */,
+				60D38C2F1A0B72A900DCE68E /* FacebookMgr.cpp */,
+				60D38C301A0B72A900DCE68E /* FacebookMgr.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
 				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
 				60FD01CD1A0A2AAC002DF8DA /* IniMgr.cpp */,
@@ -2045,6 +2058,7 @@
 				D44C620F132DFF4E0009C878 /* AudioToolbox.framework */,
 				D44C620D132DFF430009C878 /* AVFoundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				60D38C331A0B73C100DCE68E /* FacebookSDK.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				D44C620B132DFF330009C878 /* OpenAL.framework */,
 				BF170DB012928DE900B8313A /* OpenGLES.framework */,
@@ -2356,6 +2370,7 @@
 				60FD02121A0A2AAC002DF8DA /* UITip.cpp in Sources */,
 				15A3DA5B1682F826002FB0C5 /* CCTableView.cpp in Sources */,
 				15A3DA5C1682F826002FB0C5 /* CCTableViewCell.cpp in Sources */,
+				60D38C321A0B72A900DCE68E /* FacebookMgr.cpp in Sources */,
 				15A3DA5D1682F826002FB0C5 /* HttpClient.cpp in Sources */,
 				15C0B558196D412F007F909D /* CCTween.cpp in Sources */,
 				15A3DA5E1682F826002FB0C5 /* CCPhysicsDebugNode.cpp in Sources */,
@@ -2370,6 +2385,7 @@
 				15A3DAEE1682F8A6002FB0C5 /* SimpleAudioEngine.mm in Sources */,
 				15C0B554196D412F007F909D /* CCNodeReader.cpp in Sources */,
 				15C0B551196D412F007F909D /* CCActionTimeline.cpp in Sources */,
+				60D38C311A0B72A900DCE68E /* FacebookInterface.mm in Sources */,
 				15A3DAEF1682F8A6002FB0C5 /* SimpleAudioEngine_objc.m in Sources */,
 				1A27573F1697CF2B00504026 /* CCEditBoxImplAndroid.cpp in Sources */,
 				15C0B58D196D412F007F909D /* ListViewReader.cpp in Sources */,
@@ -2439,6 +2455,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/crq/Documents/SDK/FacebookSDK,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2490,6 +2510,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/crq/Documents/SDK/FacebookSDK,
+				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

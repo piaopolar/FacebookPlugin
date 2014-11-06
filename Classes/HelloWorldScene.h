@@ -5,10 +5,14 @@
 #include "MyLayer.h"
 #include "MyScene.h"
 #include "SceneFactoryImpl.h"
+#include "ObserverPattern.h"
 
-class HelloWorld : public MyLayer
+class HelloWorld : public MyLayer, public Observer
 {
 public:
+	HelloWorld();
+	~HelloWorld();
+
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();  
     
@@ -21,6 +25,9 @@ public:
 	void OnBtnShareScreenShot(CCObject* pObj);
 	void OnBtnReqMyselfInfo(CCObject* pObj);
 	void OnBtnReqFriendInfo(CCObject* pObj);
+
+	virtual void OnNotify(int nEvent, int nParam);
+	virtual void UpdateView();
     
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);

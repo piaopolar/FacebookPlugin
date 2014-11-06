@@ -4,6 +4,8 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 
+#import <FacebookSDK/FacebookSDK.h>
+
 @implementation AppController
 
 #pragma mark -
@@ -54,6 +56,10 @@ static AppDelegate s_sharedApplication;
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+	// attempt to extract a token from the url
+	return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
