@@ -31,6 +31,8 @@ const char *GetStrValue(const char *pszConfig, const char *pszKey, const char *p
 }
 }
 
+USING_NS_CC_EXT;
+
 void QMyGroupNode::addChild( CCNode *pAddNode )
 {
 	if (NULL == pAddNode) {
@@ -1647,6 +1649,27 @@ int UIMgr::GetMultiResolutionPolicy( void ) const
 void UIMgr::SetMultiResolutionPolicy( int nType )
 {
 	m_nMultiResolutionPolicy = nType;
+
+	CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
+	auto sizeDevice = pEGLView->getFrameSize();
+	UIMgr::GetInstance()->SetDeviceSize(sizeDevice.width, sizeDevice.height);
+
+	float fDesignWidth = this->GetConfigValue("DesignResolution", "w", 960);
+	float fDesignHeight = this->GetConfigValue("DesignResolution", "h", 640);
+
+	if (MULTIRESOLUTION_POLICY_LACE == nType) {
+		if (sizeDevice.height / sizeDevice.width >= fDesignHeight / fDesignHeight) {
+			float fNewHeight = fDesignWidth * sizeDevice.height / sizeDevice.width;
+			pEGLView->setDesignResolutionSize(fDesignWidth, fNewHeight, kResolutionShowAll);
+		} else {
+			float fNewWidth = fDesignHeight * sizeDevice.width / sizeDevice.height;
+			pEGLView->setDesignResolutionSize(fNewWidth, fDesignHeight, kResolutionShowAll);
+		}
+	} else {
+		pEGLView->setDesignResolutionSize(fDesignWidth, fDesignHeight, kResolutionExactFit);
+	}
+
+	UIMgr::GetInstance()->SetConfigSize(fDesignWidth, fDesignHeight);
 }
 
 void UIMgr::SetSceneFactory( ISceneFactory* pSceneFactory )

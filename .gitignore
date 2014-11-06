@@ -25,3 +25,5 @@ Debug
 Release
 Env
 Debug.win32
+project.xcworkspace
+xcuserdata

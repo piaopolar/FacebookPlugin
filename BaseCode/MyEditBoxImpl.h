@@ -30,6 +30,8 @@
 #include "ExtensionMacros.h"
 #include "MyEditBox.h"
 
+NS_CC_EXT_BEGIN
+
 class MyEditBoxImpl
 {
 public:
@@ -74,5 +76,7 @@ protected:
 
 // This method must be implemented at each subclass of MyEditBoxImpl.
 extern MyEditBoxImpl* __createSystemEditBox(MyEditBox* pEditBox);
+
+NS_CC_EXT_END
 
 #endif /* __CCEditBoxIMPL_H__ */

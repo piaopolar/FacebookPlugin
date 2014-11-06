@@ -259,26 +259,6 @@ void CMyProgressTo::startWithTarget(CCNode *pTarget)
     m_fFrom = ((CCProgressTimer*)(pTarget))->getPercentage();
 }
 
-template<typename ShaderInterface>
-ShaderInterface* CreateShaderInterface(CCNode* pNode, const char *pszkey)
-{
-	ebShaderSprite* pShaderSprite = dynamic_cast<ebShaderSprite*>(pNode);
-	MY_ASSERT(pShaderSprite, "CreateShaderInterface Target %x NOT ebShaderSprite", pShaderSprite);
-	if (NULL == pShaderSprite) {
-		return NULL;
-	}
-	
-	ShaderInterface* pShader = (ShaderInterface*)ebShaderManager::getInstance()->get(pszkey);
-	if (NULL == pShader) {
-		pShader = ShaderInterface::create();
-		ebShaderManager::getInstance()->add(pShader, pszkey);
-	}
-
-	pShaderSprite->setShaderInterface(pShader);
-	CC_SAFE_RETAIN(pShader);
-	return pShader;
-}
-
 CCActionInterval* CElasticActionBy::reverse(void)
 {
     return CElasticActionBy::create(m_fDuration, ccp(-m_delta.x, -m_delta.y),

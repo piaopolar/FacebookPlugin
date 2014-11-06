@@ -31,6 +31,8 @@
 #include "MyEditBox.h"
 #include "proj.win32/Win32InputBox.h"
 
+NS_CC_EXT_BEGIN;
+
 MyEditBoxImpl* __createSystemEditBox(MyEditBox* pEditBox)
 {
     return new MyEditBoxImplWin(pEditBox);
@@ -291,5 +293,7 @@ void MyEditBoxImplWin::onEnter(void)
 {
 
 }
+
+NS_CC_EXT_END
 
 #endif /* (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) */

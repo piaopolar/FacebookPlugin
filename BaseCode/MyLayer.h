@@ -9,8 +9,11 @@
 
 #include "BaseDef.h"
 
+NS_CC_EXT_BEGIN
 class MyEditBox;
 class MyEditBoxDelegate;
+NS_CC_EXT_END
+
 class MyMenu;
 class MyScrollView;
 
@@ -54,7 +57,7 @@ public:
 	MyScrollView* AddToConfigScrollViewWithNoDelegate(const char *pszConfig);
 	CCSprite* AddConfigSprite(const char *pszConfigSection, const char *pszImageFile = NULL);
 	CCSprite* AddConfigSprite(CCNode* pParent, const char *pszConfigSection, const char *pszImageFile = NULL);
-	MyEditBox* AddConfigEditBox(const char *pszConfigSection, MyEditBoxDelegate* pDelegate);
+	cocos2d::extension::MyEditBox* AddConfigEditBox(const char *pszConfigSection, cocos2d::extension::MyEditBoxDelegate* pDelegate);
 	CCMenuItemSprite* AddConfigMenuItem(const char *pszConfigSection, SEL_MenuHandler selector = NULL);
 	CCMenuItemSprite* AddConfigMenuItem(CCNode* pParent, const char *pszConfigSection, SEL_MenuHandler selector = NULL);
 	CCLabelTTF* AddConfigTextLabel(const char *pszConfigSection, const char *pszString = NULL, int nWidth = -1);

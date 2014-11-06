@@ -33,6 +33,8 @@
 #include "ExtensionMacros.h"
 #include "MyEditBoxImpl.h"
 
+NS_CC_EXT_BEGIN
+
 class MyEditBox;
 
 class MyEditBoxImplWin : public MyEditBoxImpl
@@ -88,6 +90,8 @@ private:
     int        m_nMaxTextLength;
 	*/
 };
+
+NS_CC_EXT_END
 
 #endif /* (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) */
 

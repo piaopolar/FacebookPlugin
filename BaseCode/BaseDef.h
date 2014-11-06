@@ -8,6 +8,7 @@
 #define __BASE_DEF_H__
 
 #include <stack>
+#include <vector>
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
@@ -32,5 +33,44 @@ const CCPoint ANCHOR_DEFAULT = ANCHOR_POINT_GROUP[ANCHOR_TYPE_DEFAULT];
 const int MAX_STRING = 1024;
 
 #define FLOAT_MAX_VALUE  3.402823466E38f
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+
+#ifdef small
+#undef small
+#endif
+
+
+#else
+
+#define OutputDebugString printf
+typedef unsigned int       DWORD;
+#ifndef INT_MAX
+#define INT_MAX       2147483647    /* maximum (signed) int value */
+#endif
+#ifndef UINT_MAX
+#define UINT_MAX      0xffffffff    /* maximum unsigned int value */
+#endif
+
+#ifndef __int64
+#define __int64       long long
+#endif
+
+#ifndef OUT
+#define OUT
+#endif
+
+#ifndef OBJC_BOOL_DEFINED
+typedef int BOOL;
+#endif
+
+#ifndef FALSE
+#define FALSE               0
+#endif
+
+#ifndef TRUE
+#define TRUE                1
+#endif
+#endif
 
 #endif

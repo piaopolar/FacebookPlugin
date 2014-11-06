@@ -247,6 +247,31 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		601323BF1A0B05FB00176204 /* SceneFactoryImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 601323BD1A0B05FB00176204 /* SceneFactoryImpl.cpp */; };
+		601323C11A0B069500176204 /* ini in Resources */ = {isa = PBXBuildFile; fileRef = 601323C01A0B069500176204 /* ini */; };
+		60FD01FB1A0A2AAC002DF8DA /* BaseFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01CB1A0A2AAC002DF8DA /* BaseFunc.cpp */; };
+		60FD01FC1A0A2AAC002DF8DA /* IniMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01CD1A0A2AAC002DF8DA /* IniMgr.cpp */; };
+		60FD01FD1A0A2AAC002DF8DA /* MyActionInterval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01CF1A0A2AAC002DF8DA /* MyActionInterval.cpp */; };
+		60FD01FE1A0A2AAC002DF8DA /* MyCCImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01D11A0A2AAC002DF8DA /* MyCCImpl.cpp */; };
+		60FD01FF1A0A2AAC002DF8DA /* MyDrawNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01D31A0A2AAC002DF8DA /* MyDrawNode.cpp */; };
+		60FD02001A0A2AAC002DF8DA /* MyEditBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01D51A0A2AAC002DF8DA /* MyEditBox.cpp */; };
+		60FD02011A0A2AAC002DF8DA /* MyEditBoxImplAndroid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01D81A0A2AAC002DF8DA /* MyEditBoxImplAndroid.cpp */; };
+		60FD02021A0A2AAC002DF8DA /* MyEditBoxImplIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01DB1A0A2AAC002DF8DA /* MyEditBoxImplIOS.mm */; };
+		60FD02031A0A2AAC002DF8DA /* MyEditBoxImplWin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01DC1A0A2AAC002DF8DA /* MyEditBoxImplWin.cpp */; };
+		60FD02051A0A2AAC002DF8DA /* MyFrameAnimationNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01DF1A0A2AAC002DF8DA /* MyFrameAnimationNode.cpp */; };
+		60FD02061A0A2AAC002DF8DA /* MyIni.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01E11A0A2AAC002DF8DA /* MyIni.cpp */; };
+		60FD02071A0A2AAC002DF8DA /* MyLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01E31A0A2AAC002DF8DA /* MyLayer.cpp */; };
+		60FD02081A0A2AAC002DF8DA /* MyMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01E51A0A2AAC002DF8DA /* MyMenu.cpp */; };
+		60FD02091A0A2AAC002DF8DA /* MyMenuItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01E71A0A2AAC002DF8DA /* MyMenuItem.cpp */; };
+		60FD020A1A0A2AAC002DF8DA /* MyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01E91A0A2AAC002DF8DA /* MyScene.cpp */; };
+		60FD020B1A0A2AAC002DF8DA /* MyScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01EB1A0A2AAC002DF8DA /* MyScrollView.cpp */; };
+		60FD020C1A0A2AAC002DF8DA /* ObserverPattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01ED1A0A2AAC002DF8DA /* ObserverPattern.cpp */; };
+		60FD020D1A0A2AAC002DF8DA /* SceneFactoryInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01EF1A0A2AAC002DF8DA /* SceneFactoryInterface.cpp */; };
+		60FD020E1A0A2AAC002DF8DA /* StdAfx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01F11A0A2AAC002DF8DA /* StdAfx.cpp */; };
+		60FD020F1A0A2AAC002DF8DA /* StringMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01F31A0A2AAC002DF8DA /* StringMgr.cpp */; };
+		60FD02101A0A2AAC002DF8DA /* UIEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01F51A0A2AAC002DF8DA /* UIEditor.cpp */; };
+		60FD02111A0A2AAC002DF8DA /* UIMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01F71A0A2AAC002DF8DA /* UIMgr.cpp */; };
+		60FD02121A0A2AAC002DF8DA /* UITip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FD01F91A0A2AAC002DF8DA /* UITip.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
@@ -782,6 +807,57 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		37C62C0718E156AE00D16FC4 /* ExtensionExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionExport.h; sourceTree = "<group>"; };
+		601323BD1A0B05FB00176204 /* SceneFactoryImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneFactoryImpl.cpp; sourceTree = "<group>"; };
+		601323BE1A0B05FB00176204 /* SceneFactoryImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneFactoryImpl.h; sourceTree = "<group>"; };
+		601323C01A0B069500176204 /* ini */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ini; sourceTree = "<group>"; };
+		60FD01CA1A0A2AAC002DF8DA /* BaseDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseDef.h; path = ../BaseCode/BaseDef.h; sourceTree = "<group>"; };
+		60FD01CB1A0A2AAC002DF8DA /* BaseFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseFunc.cpp; path = ../BaseCode/BaseFunc.cpp; sourceTree = "<group>"; };
+		60FD01CC1A0A2AAC002DF8DA /* BaseFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseFunc.h; path = ../BaseCode/BaseFunc.h; sourceTree = "<group>"; };
+		60FD01CD1A0A2AAC002DF8DA /* IniMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IniMgr.cpp; path = ../BaseCode/IniMgr.cpp; sourceTree = "<group>"; };
+		60FD01CE1A0A2AAC002DF8DA /* IniMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IniMgr.h; path = ../BaseCode/IniMgr.h; sourceTree = "<group>"; };
+		60FD01CF1A0A2AAC002DF8DA /* MyActionInterval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyActionInterval.cpp; path = ../BaseCode/MyActionInterval.cpp; sourceTree = "<group>"; };
+		60FD01D01A0A2AAC002DF8DA /* MyActionInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyActionInterval.h; path = ../BaseCode/MyActionInterval.h; sourceTree = "<group>"; };
+		60FD01D11A0A2AAC002DF8DA /* MyCCImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyCCImpl.cpp; path = ../BaseCode/MyCCImpl.cpp; sourceTree = "<group>"; };
+		60FD01D21A0A2AAC002DF8DA /* MyCCImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCCImpl.h; path = ../BaseCode/MyCCImpl.h; sourceTree = "<group>"; };
+		60FD01D31A0A2AAC002DF8DA /* MyDrawNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyDrawNode.cpp; path = ../BaseCode/MyDrawNode.cpp; sourceTree = "<group>"; };
+		60FD01D41A0A2AAC002DF8DA /* MyDrawNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyDrawNode.h; path = ../BaseCode/MyDrawNode.h; sourceTree = "<group>"; };
+		60FD01D51A0A2AAC002DF8DA /* MyEditBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyEditBox.cpp; path = ../BaseCode/MyEditBox.cpp; sourceTree = "<group>"; };
+		60FD01D61A0A2AAC002DF8DA /* MyEditBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyEditBox.h; path = ../BaseCode/MyEditBox.h; sourceTree = "<group>"; };
+		60FD01D71A0A2AAC002DF8DA /* MyEditBoxImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyEditBoxImpl.h; path = ../BaseCode/MyEditBoxImpl.h; sourceTree = "<group>"; };
+		60FD01D81A0A2AAC002DF8DA /* MyEditBoxImplAndroid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyEditBoxImplAndroid.cpp; path = ../BaseCode/MyEditBoxImplAndroid.cpp; sourceTree = "<group>"; };
+		60FD01D91A0A2AAC002DF8DA /* MyEditBoxImplAndroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyEditBoxImplAndroid.h; path = ../BaseCode/MyEditBoxImplAndroid.h; sourceTree = "<group>"; };
+		60FD01DA1A0A2AAC002DF8DA /* MyEditBoxImplIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyEditBoxImplIOS.h; path = ../BaseCode/MyEditBoxImplIOS.h; sourceTree = "<group>"; };
+		60FD01DB1A0A2AAC002DF8DA /* MyEditBoxImplIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MyEditBoxImplIOS.mm; path = ../BaseCode/MyEditBoxImplIOS.mm; sourceTree = "<group>"; };
+		60FD01DC1A0A2AAC002DF8DA /* MyEditBoxImplWin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyEditBoxImplWin.cpp; path = ../BaseCode/MyEditBoxImplWin.cpp; sourceTree = "<group>"; };
+		60FD01DE1A0A2AAC002DF8DA /* MyEditBoxImplWin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyEditBoxImplWin.h; path = ../BaseCode/MyEditBoxImplWin.h; sourceTree = "<group>"; };
+		60FD01DF1A0A2AAC002DF8DA /* MyFrameAnimationNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyFrameAnimationNode.cpp; path = ../BaseCode/MyFrameAnimationNode.cpp; sourceTree = "<group>"; };
+		60FD01E01A0A2AAC002DF8DA /* MyFrameAnimationNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyFrameAnimationNode.h; path = ../BaseCode/MyFrameAnimationNode.h; sourceTree = "<group>"; };
+		60FD01E11A0A2AAC002DF8DA /* MyIni.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyIni.cpp; path = ../BaseCode/MyIni.cpp; sourceTree = "<group>"; };
+		60FD01E21A0A2AAC002DF8DA /* MyIni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyIni.h; path = ../BaseCode/MyIni.h; sourceTree = "<group>"; };
+		60FD01E31A0A2AAC002DF8DA /* MyLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyLayer.cpp; path = ../BaseCode/MyLayer.cpp; sourceTree = "<group>"; };
+		60FD01E41A0A2AAC002DF8DA /* MyLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyLayer.h; path = ../BaseCode/MyLayer.h; sourceTree = "<group>"; };
+		60FD01E51A0A2AAC002DF8DA /* MyMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyMenu.cpp; path = ../BaseCode/MyMenu.cpp; sourceTree = "<group>"; };
+		60FD01E61A0A2AAC002DF8DA /* MyMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMenu.h; path = ../BaseCode/MyMenu.h; sourceTree = "<group>"; };
+		60FD01E71A0A2AAC002DF8DA /* MyMenuItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyMenuItem.cpp; path = ../BaseCode/MyMenuItem.cpp; sourceTree = "<group>"; };
+		60FD01E81A0A2AAC002DF8DA /* MyMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMenuItem.h; path = ../BaseCode/MyMenuItem.h; sourceTree = "<group>"; };
+		60FD01E91A0A2AAC002DF8DA /* MyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyScene.cpp; path = ../BaseCode/MyScene.cpp; sourceTree = "<group>"; };
+		60FD01EA1A0A2AAC002DF8DA /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyScene.h; path = ../BaseCode/MyScene.h; sourceTree = "<group>"; };
+		60FD01EB1A0A2AAC002DF8DA /* MyScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyScrollView.cpp; path = ../BaseCode/MyScrollView.cpp; sourceTree = "<group>"; };
+		60FD01EC1A0A2AAC002DF8DA /* MyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyScrollView.h; path = ../BaseCode/MyScrollView.h; sourceTree = "<group>"; };
+		60FD01ED1A0A2AAC002DF8DA /* ObserverPattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObserverPattern.cpp; path = ../BaseCode/ObserverPattern.cpp; sourceTree = "<group>"; };
+		60FD01EE1A0A2AAC002DF8DA /* ObserverPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObserverPattern.h; path = ../BaseCode/ObserverPattern.h; sourceTree = "<group>"; };
+		60FD01EF1A0A2AAC002DF8DA /* SceneFactoryInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneFactoryInterface.cpp; path = ../BaseCode/SceneFactoryInterface.cpp; sourceTree = "<group>"; };
+		60FD01F01A0A2AAC002DF8DA /* SceneFactoryInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneFactoryInterface.h; path = ../BaseCode/SceneFactoryInterface.h; sourceTree = "<group>"; };
+		60FD01F11A0A2AAC002DF8DA /* StdAfx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StdAfx.cpp; path = ../BaseCode/StdAfx.cpp; sourceTree = "<group>"; };
+		60FD01F21A0A2AAC002DF8DA /* StdAfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StdAfx.h; path = ../BaseCode/StdAfx.h; sourceTree = "<group>"; };
+		60FD01F31A0A2AAC002DF8DA /* StringMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StringMgr.cpp; path = ../BaseCode/StringMgr.cpp; sourceTree = "<group>"; };
+		60FD01F41A0A2AAC002DF8DA /* StringMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StringMgr.h; path = ../BaseCode/StringMgr.h; sourceTree = "<group>"; };
+		60FD01F51A0A2AAC002DF8DA /* UIEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UIEditor.cpp; path = ../BaseCode/UIEditor.cpp; sourceTree = "<group>"; };
+		60FD01F61A0A2AAC002DF8DA /* UIEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIEditor.h; path = ../BaseCode/UIEditor.h; sourceTree = "<group>"; };
+		60FD01F71A0A2AAC002DF8DA /* UIMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UIMgr.cpp; path = ../BaseCode/UIMgr.cpp; sourceTree = "<group>"; };
+		60FD01F81A0A2AAC002DF8DA /* UIMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIMgr.h; path = ../BaseCode/UIMgr.h; sourceTree = "<group>"; };
+		60FD01F91A0A2AAC002DF8DA /* UITip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UITip.cpp; path = ../BaseCode/UITip.cpp; sourceTree = "<group>"; };
+		60FD01FA1A0A2AAC002DF8DA /* UITip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UITip.h; path = ../BaseCode/UITip.h; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -1318,8 +1394,58 @@
 			children = (
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
+				60FD01CA1A0A2AAC002DF8DA /* BaseDef.h */,
+				60FD01CB1A0A2AAC002DF8DA /* BaseFunc.cpp */,
+				60FD01CC1A0A2AAC002DF8DA /* BaseFunc.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
 				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
+				60FD01CD1A0A2AAC002DF8DA /* IniMgr.cpp */,
+				60FD01CE1A0A2AAC002DF8DA /* IniMgr.h */,
+				60FD01CF1A0A2AAC002DF8DA /* MyActionInterval.cpp */,
+				60FD01D01A0A2AAC002DF8DA /* MyActionInterval.h */,
+				60FD01D11A0A2AAC002DF8DA /* MyCCImpl.cpp */,
+				60FD01D21A0A2AAC002DF8DA /* MyCCImpl.h */,
+				60FD01D31A0A2AAC002DF8DA /* MyDrawNode.cpp */,
+				60FD01D41A0A2AAC002DF8DA /* MyDrawNode.h */,
+				60FD01D51A0A2AAC002DF8DA /* MyEditBox.cpp */,
+				60FD01D61A0A2AAC002DF8DA /* MyEditBox.h */,
+				60FD01D71A0A2AAC002DF8DA /* MyEditBoxImpl.h */,
+				60FD01D81A0A2AAC002DF8DA /* MyEditBoxImplAndroid.cpp */,
+				60FD01D91A0A2AAC002DF8DA /* MyEditBoxImplAndroid.h */,
+				60FD01DA1A0A2AAC002DF8DA /* MyEditBoxImplIOS.h */,
+				60FD01DB1A0A2AAC002DF8DA /* MyEditBoxImplIOS.mm */,
+				60FD01DC1A0A2AAC002DF8DA /* MyEditBoxImplWin.cpp */,
+				60FD01DE1A0A2AAC002DF8DA /* MyEditBoxImplWin.h */,
+				60FD01DF1A0A2AAC002DF8DA /* MyFrameAnimationNode.cpp */,
+				60FD01E01A0A2AAC002DF8DA /* MyFrameAnimationNode.h */,
+				60FD01E11A0A2AAC002DF8DA /* MyIni.cpp */,
+				60FD01E21A0A2AAC002DF8DA /* MyIni.h */,
+				60FD01E31A0A2AAC002DF8DA /* MyLayer.cpp */,
+				60FD01E41A0A2AAC002DF8DA /* MyLayer.h */,
+				60FD01E51A0A2AAC002DF8DA /* MyMenu.cpp */,
+				60FD01E61A0A2AAC002DF8DA /* MyMenu.h */,
+				60FD01E71A0A2AAC002DF8DA /* MyMenuItem.cpp */,
+				60FD01E81A0A2AAC002DF8DA /* MyMenuItem.h */,
+				60FD01E91A0A2AAC002DF8DA /* MyScene.cpp */,
+				60FD01EA1A0A2AAC002DF8DA /* MyScene.h */,
+				60FD01EB1A0A2AAC002DF8DA /* MyScrollView.cpp */,
+				60FD01EC1A0A2AAC002DF8DA /* MyScrollView.h */,
+				60FD01ED1A0A2AAC002DF8DA /* ObserverPattern.cpp */,
+				60FD01EE1A0A2AAC002DF8DA /* ObserverPattern.h */,
+				601323BD1A0B05FB00176204 /* SceneFactoryImpl.cpp */,
+				601323BE1A0B05FB00176204 /* SceneFactoryImpl.h */,
+				60FD01EF1A0A2AAC002DF8DA /* SceneFactoryInterface.cpp */,
+				60FD01F01A0A2AAC002DF8DA /* SceneFactoryInterface.h */,
+				60FD01F11A0A2AAC002DF8DA /* StdAfx.cpp */,
+				60FD01F21A0A2AAC002DF8DA /* StdAfx.h */,
+				60FD01F31A0A2AAC002DF8DA /* StringMgr.cpp */,
+				60FD01F41A0A2AAC002DF8DA /* StringMgr.h */,
+				60FD01F51A0A2AAC002DF8DA /* UIEditor.cpp */,
+				60FD01F61A0A2AAC002DF8DA /* UIEditor.h */,
+				60FD01F71A0A2AAC002DF8DA /* UIMgr.cpp */,
+				60FD01F81A0A2AAC002DF8DA /* UIMgr.h */,
+				60FD01F91A0A2AAC002DF8DA /* UITip.cpp */,
+				60FD01FA1A0A2AAC002DF8DA /* UITip.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -1931,6 +2057,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				601323C01A0B069500176204 /* ini */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
@@ -2018,6 +2145,7 @@
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
+				601323C11A0B069500176204 /* ini in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
@@ -2049,6 +2177,7 @@
 				15A3D9051682F7D5002FB0C5 /* b2DynamicTree.cpp in Sources */,
 				15A3D9061682F7D5002FB0C5 /* b2TimeOfImpact.cpp in Sources */,
 				15A3D9071682F7D5002FB0C5 /* b2ChainShape.cpp in Sources */,
+				60FD020F1A0A2AAC002DF8DA /* StringMgr.cpp in Sources */,
 				15A3D9081682F7D5002FB0C5 /* b2CircleShape.cpp in Sources */,
 				15A3D9091682F7D5002FB0C5 /* b2EdgeShape.cpp in Sources */,
 				15A3D90A1682F7D5002FB0C5 /* b2PolygonShape.cpp in Sources */,
@@ -2067,6 +2196,7 @@
 				15C0B55C196D412F007F909D /* CCBatchNode.cpp in Sources */,
 				15A3D9141682F7D5002FB0C5 /* b2Island.cpp in Sources */,
 				15A3D9151682F7D5002FB0C5 /* b2World.cpp in Sources */,
+				60FD02031A0A2AAC002DF8DA /* MyEditBoxImplWin.cpp in Sources */,
 				15A3D9161682F7D5002FB0C5 /* b2WorldCallbacks.cpp in Sources */,
 				15C0B582196D412F007F909D /* CocoLoader.cpp in Sources */,
 				15A3D9171682F7D5002FB0C5 /* b2ChainAndCircleContact.cpp in Sources */,
@@ -2079,6 +2209,7 @@
 				15A3D91B1682F7D5002FB0C5 /* b2ContactSolver.cpp in Sources */,
 				15C0B57B196D412F007F909D /* UILabel.cpp in Sources */,
 				15C0B575196D412F007F909D /* UIListView.cpp in Sources */,
+				60FD02011A0A2AAC002DF8DA /* MyEditBoxImplAndroid.cpp in Sources */,
 				15A3D91C1682F7D5002FB0C5 /* b2EdgeAndCircleContact.cpp in Sources */,
 				15A3D91D1682F7D5002FB0C5 /* b2EdgeAndPolygonContact.cpp in Sources */,
 				15A3D91E1682F7D5002FB0C5 /* b2PolygonAndCircleContact.cpp in Sources */,
@@ -2086,10 +2217,13 @@
 				15C0B57A196D412F007F909D /* UIImageView.cpp in Sources */,
 				15A3D91F1682F7D5002FB0C5 /* b2PolygonContact.cpp in Sources */,
 				15A3D9201682F7D5002FB0C5 /* b2DistanceJoint.cpp in Sources */,
+				60FD02101A0A2AAC002DF8DA /* UIEditor.cpp in Sources */,
 				15A3D9211682F7D5002FB0C5 /* b2FrictionJoint.cpp in Sources */,
 				15C0B58E196D412F007F909D /* LoadingBarReader.cpp in Sources */,
+				60FD020A1A0A2AAC002DF8DA /* MyScene.cpp in Sources */,
 				15C0B553196D412F007F909D /* CCFrame.cpp in Sources */,
 				15C0B570196D412F007F909D /* UILayoutDefine.cpp in Sources */,
+				60FD020D1A0A2AAC002DF8DA /* SceneFactoryInterface.cpp in Sources */,
 				15A3D9221682F7D5002FB0C5 /* b2GearJoint.cpp in Sources */,
 				15A3D9231682F7D5002FB0C5 /* b2Joint.cpp in Sources */,
 				15A3D9241682F7D5002FB0C5 /* b2MouseJoint.cpp in Sources */,
@@ -2117,6 +2251,7 @@
 				15C0B55F196D412F007F909D /* CCDisplayManager.cpp in Sources */,
 				15A3D99D1682F7F9002FB0C5 /* cpPivotJoint.c in Sources */,
 				15A3D99E1682F7F9002FB0C5 /* cpRatchetJoint.c in Sources */,
+				60FD01FC1A0A2AAC002DF8DA /* IniMgr.cpp in Sources */,
 				15A3D99F1682F7F9002FB0C5 /* cpRotaryLimitJoint.c in Sources */,
 				15A3D9A01682F7F9002FB0C5 /* cpSimpleMotor.c in Sources */,
 				15C0B560196D412F007F909D /* CCSkin.cpp in Sources */,
@@ -2139,12 +2274,14 @@
 				15A3D9AC1682F7F9002FB0C5 /* cpSpaceComponent.c in Sources */,
 				15A3D9AD1682F7F9002FB0C5 /* cpSpaceHash.c in Sources */,
 				15A3D9AE1682F7F9002FB0C5 /* cpSpaceQuery.c in Sources */,
+				60FD02111A0A2AAC002DF8DA /* UIMgr.cpp in Sources */,
 				15A3D9AF1682F7F9002FB0C5 /* cpSpaceStep.c in Sources */,
 				15A3D9B01682F7F9002FB0C5 /* cpSpatialIndex.c in Sources */,
 				15A3D9B11682F7F9002FB0C5 /* cpSweep1D.c in Sources */,
 				15C0B588196D412F007F909D /* ImageViewReader.cpp in Sources */,
 				15A3D9B21682F7F9002FB0C5 /* cpVect.c in Sources */,
 				15A3DA311682F826002FB0C5 /* CCBAnimationManager.cpp in Sources */,
+				60FD02051A0A2AAC002DF8DA /* MyFrameAnimationNode.cpp in Sources */,
 				15C0B557196D412F007F909D /* CCProcessBase.cpp in Sources */,
 				15A3DA321682F826002FB0C5 /* CCBFileLoader.cpp in Sources */,
 				15A3DA331682F826002FB0C5 /* CCBKeyframe.cpp in Sources */,
@@ -2154,6 +2291,7 @@
 				15C0B54E196D412F007F909D /* CCActionManager.cpp in Sources */,
 				15A3DA341682F826002FB0C5 /* CCBReader.cpp in Sources */,
 				15C0B574196D412F007F909D /* UITouchGroup.cpp in Sources */,
+				60FD01FE1A0A2AAC002DF8DA /* MyCCImpl.cpp in Sources */,
 				15A3DA351682F826002FB0C5 /* CCBSequence.cpp in Sources */,
 				15A3DA361682F826002FB0C5 /* CCBSequenceProperty.cpp in Sources */,
 				15A3DA371682F826002FB0C5 /* CCBValue.cpp in Sources */,
@@ -2165,18 +2303,23 @@
 				15C0B568196D412F007F909D /* CCUtilMath.cpp in Sources */,
 				15A3DA3C1682F826002FB0C5 /* CCLabelTTFLoader.cpp in Sources */,
 				15C0B572196D412F007F909D /* CocosGUI.cpp in Sources */,
+				60FD020C1A0A2AAC002DF8DA /* ObserverPattern.cpp in Sources */,
 				15A3DA3D1682F826002FB0C5 /* CCLayerColorLoader.cpp in Sources */,
 				15C0B589196D412F007F909D /* LabelAtlasReader.cpp in Sources */,
 				15A3DA3E1682F826002FB0C5 /* CCLayerGradientLoader.cpp in Sources */,
+				60FD02081A0A2AAC002DF8DA /* MyMenu.cpp in Sources */,
 				15C0B595196D412F007F909D /* TriggerBase.cpp in Sources */,
 				15A3DA3F1682F826002FB0C5 /* CCLayerLoader.cpp in Sources */,
 				15A3DA401682F826002FB0C5 /* CCMenuItemImageLoader.cpp in Sources */,
+				60FD02091A0A2AAC002DF8DA /* MyMenuItem.cpp in Sources */,
 				15A3DA411682F826002FB0C5 /* CCMenuItemLoader.cpp in Sources */,
+				60FD02061A0A2AAC002DF8DA /* MyIni.cpp in Sources */,
 				15A3DA421682F826002FB0C5 /* CCNode+CCBRelativePositioning.cpp in Sources */,
 				15A3DA431682F826002FB0C5 /* CCNodeLoader.cpp in Sources */,
 				15A3DA441682F826002FB0C5 /* CCNodeLoaderLibrary.cpp in Sources */,
 				15A3DA451682F826002FB0C5 /* CCParticleSystemQuadLoader.cpp in Sources */,
 				15C0B594196D412F007F909D /* ObjectFactory.cpp in Sources */,
+				60FD02001A0A2AAC002DF8DA /* MyEditBox.cpp in Sources */,
 				15C0B56B196D412F007F909D /* CCComController.cpp in Sources */,
 				15C0B56D196D412F007F909D /* CCInputDelegate.cpp in Sources */,
 				15A3DA461682F826002FB0C5 /* CCScale9SpriteLoader.cpp in Sources */,
@@ -2187,12 +2330,14 @@
 				15A3DA4A1682F826002FB0C5 /* CCControlButton.cpp in Sources */,
 				15A3DA4B1682F826002FB0C5 /* CCControlColourPicker.cpp in Sources */,
 				15A3DA4C1682F826002FB0C5 /* CCControlHuePicker.cpp in Sources */,
+				60FD020B1A0A2AAC002DF8DA /* MyScrollView.cpp in Sources */,
 				15C0B55E196D412F007F909D /* CCDisplayFactory.cpp in Sources */,
 				15A3DA4D1682F826002FB0C5 /* CCControlPotentiometer.cpp in Sources */,
 				15A3DA4E1682F826002FB0C5 /* CCControlSaturationBrightnessPicker.cpp in Sources */,
 				15A3DA4F1682F826002FB0C5 /* CCControlSlider.cpp in Sources */,
 				15C0B591196D412F007F909D /* SliderReader.cpp in Sources */,
 				15C0B592196D412F007F909D /* TextFieldReader.cpp in Sources */,
+				60FD02021A0A2AAC002DF8DA /* MyEditBoxImplIOS.mm in Sources */,
 				15C0B57F196D412F007F909D /* UIRichText.cpp in Sources */,
 				15C0B583196D412F007F909D /* DictionaryHelper.cpp in Sources */,
 				15A3DA501682F826002FB0C5 /* CCControlStepper.cpp in Sources */,
@@ -2208,6 +2353,7 @@
 				15A3DA571682F826002FB0C5 /* CCEditBoxImplIOS.mm in Sources */,
 				15A3DA591682F826002FB0C5 /* CCScrollView.cpp in Sources */,
 				15A3DA5A1682F826002FB0C5 /* CCSorting.cpp in Sources */,
+				60FD02121A0A2AAC002DF8DA /* UITip.cpp in Sources */,
 				15A3DA5B1682F826002FB0C5 /* CCTableView.cpp in Sources */,
 				15A3DA5C1682F826002FB0C5 /* CCTableViewCell.cpp in Sources */,
 				15A3DA5D1682F826002FB0C5 /* HttpClient.cpp in Sources */,
@@ -2231,15 +2377,19 @@
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 				15C0B57E196D412F007F909D /* UILoadingBar.cpp in Sources */,
 				1AC3624916D4A1E8000847F2 /* AppController.mm in Sources */,
+				60FD01FB1A0A2AAC002DF8DA /* BaseFunc.cpp in Sources */,
 				1AC3624B16D4A1E8000847F2 /* main.m in Sources */,
 				1AFCDA8216D4A25900906EA6 /* RootViewController.mm in Sources */,
 				15C0B564196D412F007F909D /* CCDataReaderHelper.cpp in Sources */,
+				60FD01FF1A0A2AAC002DF8DA /* MyDrawNode.cpp in Sources */,
 				15C0B579196D412F007F909D /* UICheckBox.cpp in Sources */,
 				1A8F3B6E175E05DA00049216 /* Animation.cpp in Sources */,
 				1A8F3B6F175E05DA00049216 /* AnimationState.cpp in Sources */,
+				60FD02071A0A2AAC002DF8DA /* MyLayer.cpp in Sources */,
 				15C0B58C196D412F007F909D /* LayoutReader.cpp in Sources */,
 				1A8F3B70175E05DA00049216 /* AnimationStateData.cpp in Sources */,
 				1A8F3B71175E05DA00049216 /* Atlas.cpp in Sources */,
+				601323BF1A0B05FB00176204 /* SceneFactoryImpl.cpp in Sources */,
 				1A8F3B72175E05DA00049216 /* AtlasAttachmentLoader.cpp in Sources */,
 				1A8F3B73175E05DA00049216 /* Attachment.cpp in Sources */,
 				1A8F3B74175E05DA00049216 /* AttachmentLoader.cpp in Sources */,
@@ -2256,6 +2406,7 @@
 				15C0B54D196D412F007F909D /* CCActionFrameEasing.cpp in Sources */,
 				1A8F3B7C175E05DA00049216 /* Skeleton.cpp in Sources */,
 				1A8F3B7D175E05DA00049216 /* SkeletonData.cpp in Sources */,
+				60FD020E1A0A2AAC002DF8DA /* StdAfx.cpp in Sources */,
 				1A8F3B7E175E05DA00049216 /* SkeletonJson.cpp in Sources */,
 				15C0B581196D412F007F909D /* UITextField.cpp in Sources */,
 				1A8F3B7F175E05DA00049216 /* Skin.cpp in Sources */,
@@ -2263,6 +2414,7 @@
 				1A8F3B81175E05DA00049216 /* SlotData.cpp in Sources */,
 				1A8F3B82175E05DA00049216 /* spine-cocos2dx.cpp in Sources */,
 				15C0B565196D412F007F909D /* CCSpriteFrameCacheHelper.cpp in Sources */,
+				60FD01FD1A0A2AAC002DF8DA /* MyActionInterval.cpp in Sources */,
 				15C0B576196D412F007F909D /* UIPageView.cpp in Sources */,
 				1AB87035175E0A84005D39BF /* WebSocket.cpp in Sources */,
 				1A9CE8781765A12C000E3062 /* AssetsManager.cpp in Sources */,
@@ -2312,6 +2464,7 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios\"",
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios\"",
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation\"",
+					"\"$(SRCROOT)/../BaseCode\"",
 				);
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
@@ -2360,6 +2513,7 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios\"",
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios\"",
 					"\"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation\"",
+					"\"$(SRCROOT)/../BaseCode\"",
 				);
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;

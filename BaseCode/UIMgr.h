@@ -9,14 +9,18 @@
 #include "BaseDef.h"
 
 class ISceneFactory;
-class MyEditBox;
-class cocos2d::extension::CCControlSlider;
 class MyScrollView;
 class MyLayer;
 class MyCCOjbectImpl;
 class MyDrawNode;
 class MyFrameAnimationNode;
 class MyMenu;
+
+NS_CC_EXT_BEGIN
+class CCControlSlider;
+class MyEditBox;
+NS_CC_EXT_END
+
 
 #include "MyMenuItem.h"
 
@@ -116,7 +120,7 @@ public:
 	MyDrawNode* CreateConfigDrawNode(const char *pszConfig);
 	CCSprite* CreateConfigSprite(const char *pszConfig, const char *pszValue = NULL);
 	CCLabelTTF* CreateConfigTextLabel(const char *pszConfig, const char *pszValue = NULL, int nWidth = -1);
-	MyEditBox* CreateConfigEditBox(const char *pszEditBox);
+	cocos2d::extension::MyEditBox* CreateConfigEditBox(const char *pszEditBox);
 	MyScrollView* CreateConfigScrollView(const char *pszConfig);
 	CCMenuItemSprite* CreateConfigMenuItem(const char *pszConfig, CCObject *pTarget = NULL, SEL_MenuHandler selector = NULL);
 	QMyGroupNode* CreateConfigGroupNode(const char *pszConfig);

@@ -30,10 +30,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	UIMgr::GetInstance()->SetSceneFactory(CSceneFactory::GetInstance());
 	UIMgr::GetInstance()->SetMultiResolutionPolicy(MULTIRESOLUTION_POLICY_BASEPOINT);
 
-	auto size = pEGLView->getFrameSize();
-	UIMgr::GetInstance()->SetDeviceSize(size.width, size.height);
-	UIMgr::GetInstance()->SetConfigSize(960, 640);
-
     // run
 	RUN_WITH_SCENE(HelloWorldScene);
 	

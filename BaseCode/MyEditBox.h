@@ -28,6 +28,8 @@
 
 #include "GUI/CCEditBox/CCEditBox.h"
 
+NS_CC_EXT_BEGIN
+
 class MyEditBox;
 class MyEditBoxImpl;
 
@@ -286,6 +288,9 @@ protected:
     float m_fAdjustHeight;
     int   m_nScriptEditBoxHandler;
 };
+
+
+NS_CC_EXT_END
 
 #endif /* __CCEDITTEXT_H__ */
 

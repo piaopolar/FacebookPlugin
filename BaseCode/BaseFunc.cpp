@@ -144,7 +144,7 @@ ccColor4B GetColor4B(DWORD dwColor)
 {
 	return ccc4((dwColor & 0x00ff0000) >> 16, (dwColor & 0x0000ff00) >> 8, dwColor & 0xff, (dwColor & 0xff000000) >> 24);
 }
-std::string Value2Str( __int64 i64Value )
+std::string Value2Str( long long i64Value )
 {
 	char szTmp[32] = { 0 };
 #ifdef WIN32
