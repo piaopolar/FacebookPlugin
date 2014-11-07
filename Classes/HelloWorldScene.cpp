@@ -2,6 +2,7 @@
 
 #include "UIMgr.h"
 #include "UIEditor.h"
+#include "UITip.h"
 #include "FacebookMgr.h"
 
 USING_NS_CC;
@@ -45,6 +46,7 @@ void HelloWorld::OnNotify(int nEvent, int nParam)
 	case FBACTION_LOGIN_TO_SHARE:
 	case FBACTION_LOGIN_TO_SEND_REQUEST:
 	case FBACTION_LOGOUT:
+	case FBACTION_IMAGE_UPDATE:
 		this->UpdateView();
 		break;
 	default:
@@ -57,6 +59,29 @@ void HelloWorld::UpdateView()
 	bool bLogin = FacebookMgr::GetInstance()->IsLogin();
 	m_pBtnLogin->setEnabled(bLogin ? false : true);
 	m_pBtnLogout->setEnabled(bLogin ? true : false);
+
+	CCPoint ptOffset;
+	auto vecFriend = FacebookMgr::GetInstance()->GetFriendsInfo();
+	int nCount = 0;
+	for (auto it(vecFriend.begin()); it != vecFriend.end(); ++it, ++nCount) {		
+		auto pName = this->AddConfigTextLabel("FacebookFriendName", it->m_strName.c_str());
+		UIMgr::GetInstance()->NodePositionMove(pName, ptOffset);
+
+		auto id = it->m_i64Id;
+		auto cstrFileName = CCString::createWithFormat("%lld.jpg", id);
+		std::string strPath = CCFileUtils::sharedFileUtils()->fullPathForFilename(cstrFileName->getCString());
+		bool bFileExist = CCFileUtils::sharedFileUtils()->isFileExist(strPath.c_str());
+
+		CCLog("UpdateView %lld %s %s %s Exist %d", id, it->m_strName.c_str(), cstrFileName->getCString(), strPath.c_str(), bFileExist ? 1 : 0);
+
+		if (!bFileExist) {
+			continue;
+		}
+
+		auto pNodeImage = this->AddConfigSprite("FacebookFriendImage", strPath.c_str());
+		UIMgr::GetInstance()->NodePositionMove(pNodeImage, ptOffset);
+		ptOffset.y += 50;
+	}
 }
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
@@ -98,6 +123,11 @@ void HelloWorld::OnBtnReqMyselfInfo( CCObject* pObj )
 
 void HelloWorld::OnBtnReqFriendInfo( CCObject* pObj )
 {
+	if (FacebookMgr::GetInstance()->IsLogin()) {
+		FacebookMgr::GetInstance()->RequestFriendInfo();
+	} else {
+		TipBox("Please login first");
+	}
 }
 
 bool HelloWorldScene::OnInit( void )

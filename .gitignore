@@ -20,6 +20,9 @@
 *.sdf
 *.opensdf
 ipch
+bin
+obj
+assets
 Log
 Debug
 Release

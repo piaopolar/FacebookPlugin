@@ -25,13 +25,27 @@ package com.banana.FBpluginDemo;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
+import org.FBPlugin.*;
 
+import com.facebook.AppEventsLogger;
+
+import android.content.Intent;
 import android.os.Bundle;
 
 public class FacebookPlugin extends Cocos2dxActivity{
 	
+	protected FacebookConnectPlugin facebookLoginPlugin = null;
+	protected FacebookPostPlugin facebookPostPlugin = null;
+	protected FacebookSendRequestsPlugin facebookSendRequestsPlugin = null;	
+	
     protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);	
+		facebookLoginPlugin = new FacebookConnectPlugin(this);
+		facebookPostPlugin = new FacebookPostPlugin(this);
+		facebookSendRequestsPlugin = new FacebookSendRequestsPlugin(this);
+		facebookLoginPlugin.onCreate(savedInstanceState);
+		facebookPostPlugin.onCreate(savedInstanceState);
+		facebookSendRequestsPlugin.onCreate(savedInstanceState);
 	}
 
     public Cocos2dxGLSurfaceView onCreateView() {
@@ -42,6 +56,52 @@ public class FacebookPlugin extends Cocos2dxActivity{
     	return glSurfaceView;
     }
 
+    @Override
+    protected void onResume() {
+      super.onResume();
+
+      // Logs 'install' and 'app activate' App Events.
+      AppEventsLogger.activateApp(this);
+      facebookLoginPlugin.onResume();
+      facebookPostPlugin.onResume();
+      facebookSendRequestsPlugin.onResume();
+    }
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		facebookLoginPlugin.onActivityResult(requestCode, resultCode, data);
+		facebookPostPlugin.onActivityResult(requestCode, resultCode, data);
+		facebookSendRequestsPlugin.onActivityResult(requestCode, resultCode, data);
+	}
+    
+    @Override
+    protected void onPause() {
+      super.onPause();
+
+      // Logs 'app deactivate' App Event.
+      AppEventsLogger.deactivateApp(this);
+      facebookLoginPlugin.onPause();
+      facebookPostPlugin.onPause();
+      facebookSendRequestsPlugin.onPause();
+    }
+    
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		facebookLoginPlugin.onDestory();
+		facebookPostPlugin.onDestory();
+		facebookSendRequestsPlugin.onDestory();
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		facebookLoginPlugin.onSaveInstanceState(outState);
+		facebookPostPlugin.onSaveInstanceState(outState);
+		facebookSendRequestsPlugin.onSaveInstanceState(outState);
+	}
+    
     static {
         System.loadLibrary("cocos2dcpp");
     }     

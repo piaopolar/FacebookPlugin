@@ -51,10 +51,14 @@ void FacebookMgr::OnGetResponse( int nIndex, const char *pszStr )
 		this->ProcessJsonResponse(nIndex, pszStr);
 		break;
 	case FBACTION_LOGIN_TO_SHARE:
-		this->ShareScreenShot();
+		if (this->IsLogin()) {
+			this->ShareScreenShot();
+		}
 		break;
 	case FBACTION_LOGIN_TO_SEND_REQUEST:
-		this->SendRequest();
+		if (this->IsLogin()) {
+			this->SendRequest();
+		}
 		break;
 	default:
 		break;
@@ -219,7 +223,7 @@ void FacebookMgr::TryShareScreenShot( void )
 	if (FacebookInterface::isLogin()) {
 		this->ShareScreenShot();
 	} else {
-		this->ShareScreenShot();
+		FacebookInterface::login(FBACTION_LOGIN_TO_SHARE);
 	}
 }
 
@@ -234,7 +238,7 @@ void FacebookMgr::TrySendRequest( void )
 	if (FacebookInterface::isLogin()) {
 		this->SendRequest();
 	} else {
-		FacebookInterface::login(FBACTION_SEND_REQUESTS);
+		FacebookInterface::login(FBACTION_LOGIN_TO_SEND_REQUEST);
 	}
 }
 
