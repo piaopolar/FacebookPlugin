@@ -47,6 +47,7 @@ void HelloWorld::OnNotify(int nEvent, int nParam)
 	case FBACTION_LOGIN_TO_SEND_REQUEST:
 	case FBACTION_LOGOUT:
 	case FBACTION_IMAGE_UPDATE:
+	case FBACTION_REQ_MYINFO:
 		this->UpdateView();
 		break;
 	default:
@@ -69,7 +70,8 @@ void HelloWorld::UpdateView()
 
 		auto id = it->m_i64Id;
 		auto cstrFileName = CCString::createWithFormat("%lld.jpg", id);
-		std::string strPath = CCFileUtils::sharedFileUtils()->fullPathForFilename(cstrFileName->getCString());
+		std::string strPath = CCFileUtils::sharedFileUtils()->getWritablePath();
+		strPath += cstrFileName->getCString();
 		bool bFileExist = CCFileUtils::sharedFileUtils()->isFileExist(strPath.c_str());
 
 		CCLog("UpdateView %lld %s %s %s Exist %d", id, it->m_strName.c_str(), cstrFileName->getCString(), strPath.c_str(), bFileExist ? 1 : 0);
@@ -82,6 +84,9 @@ void HelloWorld::UpdateView()
 		UIMgr::GetInstance()->NodePositionMove(pNodeImage, ptOffset);
 		ptOffset.y += 50;
 	}
+	
+	auto myInfo = FacebookMgr::GetInstance()->GetMyselfInfo();
+	this->AddConfigTextLabel("FacebookMyName", myInfo.m_strName.c_str());
 }
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
@@ -118,7 +123,11 @@ void HelloWorld::OnBtnShareScreenShot( CCObject* pObj )
 
 void HelloWorld::OnBtnReqMyselfInfo( CCObject* pObj )
 {
-
+	if (FacebookMgr::GetInstance()->IsLogin()) {
+		FacebookMgr::GetInstance()->RequestMyselfInfo();
+	} else {
+		TipBox("Please login first");
+	}
 }
 
 void HelloWorld::OnBtnReqFriendInfo( CCObject* pObj )

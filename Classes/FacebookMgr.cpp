@@ -74,6 +74,13 @@ void FacebookMgr::ProcessJsonResponse( int nIndex, const char *pszStr )
 	switch (nIndex)
 	{
 	case FBACTION_REQ_MYINFO:
+		{
+			const char *pszId = Json_getString(pJsonValue, "id", "0");
+			
+			FB_USERINFO info;
+			sscanf(pszId, "%lld", &m_infoMyself.m_i64Id);
+			m_infoMyself.m_strName = Json_getString(pJsonValue, "name", "");
+		}
 		break;
 	case FBACTION_REQ_FRIENDINFO:
 		{
@@ -125,7 +132,8 @@ void FacebookMgr::CommonRequest( int nIndex )
 		pszPermission = "user_friends";
 		break;
 	case FBACTION_REQ_MYINFO:
-		pszRequest = "/me";
+		pszRequest = "/me/";
+		break;
 	default:
 		break;
 	}
@@ -151,7 +159,8 @@ void FacebookMgr::DownloadImage( void )
 		auto* pStrFileName = CCString::createWithFormat("%lld.jpg", i64id);
 		CCLog("FacebookMgr::DownloadImage try file: [%s]", pStrFileName->getCString());
 
-		std::string strPath = CCFileUtils::sharedFileUtils()->fullPathForFilename(pStrFileName->getCString());
+		std::string strPath = CCFileUtils::sharedFileUtils()->getWritablePath();
+		strPath += pStrFileName->getCString();
 		if (CCFileUtils::sharedFileUtils()->isFileExist(strPath.c_str())) {
 			continue;
 		}

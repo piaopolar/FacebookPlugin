@@ -217,7 +217,9 @@ void FacebookInterface::request(int nIndex, const char*pszRequest, const char *p
 {
 	bool bNeedPermission = pszPermission ? true : false;
 	if (bNeedPermission) {
-		bNeedPermission = false;
+		if ([FBSession.activeSession.permissions indexOfObject:[NSString stringWithUTF8String:pszPermission]] != NSNotFound) {
+			pszPermission = false;
+		}
 	}
 	
 	if (bNeedPermission) {
