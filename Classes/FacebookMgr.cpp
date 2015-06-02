@@ -55,11 +55,6 @@ void FacebookMgr::OnGetResponse( int nIndex, const char *pszStr )
 			this->ShareScreenShot();
 		}
 		break;
-	case FBACTION_LOGIN_TO_SEND_REQUEST:
-		if (this->IsLogin()) {
-			this->SendRequest();
-		}
-		break;
 	default:
 		break;
 	}
@@ -242,13 +237,14 @@ void FacebookMgr::ShareScreenShot( void )
 	FacebookInterface::postStatus("Name", "Caption", "Desc", "www.yile.com", m_strScreenShotPath.c_str());
 }
 
+void FacebookMgr::InviteFriends(const char *pszAppLink, const char *pszImgUrl)
+{
+	FacebookInterface::inviteFriends(pszAppLink, pszImgUrl);
+}
+
 void FacebookMgr::TrySendRequest( void )
 {
-	if (FacebookInterface::isLogin()) {
-		this->SendRequest();
-	} else {
-		FacebookInterface::login(FBACTION_LOGIN_TO_SEND_REQUEST);
-	}
+	this->SendRequest();
 }
 
 void FacebookMgr::SendRequest( void )

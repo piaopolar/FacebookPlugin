@@ -15,7 +15,6 @@ enum
 {
 	FBACTION_LOGIN,
 	FBACTION_LOGIN_TO_SHARE,
-	FBACTION_LOGIN_TO_SEND_REQUEST,
 	FBACTION_LOGOUT,
 	FBACTION_GET_STATUS,
 	FBACTION_PICK_FRIEND,
@@ -55,6 +54,7 @@ public:
 	void TryShareScreenShot(void);
 	void TrySendRequest(void);
 	
+	void InviteFriends(const char *pszAppLink, const char *pszImgUrl);
 	void RequestMyselfInfo(void);
 	void RequestFriendInfo(void);
 	void CommonRequest(int nIndex);

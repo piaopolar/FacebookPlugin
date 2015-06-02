@@ -34,6 +34,9 @@ bool HelloWorld::init()
 	this->AddConfigNode("FacebookBtnShareScreenShot", menu_selector(HelloWorld::OnBtnShareScreenShot));
 	this->AddConfigNode("FacebookBtnReqMyselfInfo", menu_selector(HelloWorld::OnBtnReqMyselfInfo));
 	this->AddConfigNode("FacebookBtnReqFriendInfo", menu_selector(HelloWorld::OnBtnReqFriendInfo));
+	this->AddConfigNode("FacebookBtnInvite", menu_selector(HelloWorld::OnBtnInvite));
+	m_pNodeUpdate = CCNode::create();
+	this->addChild(m_pNodeUpdate);
 
 	this->UpdateView();
     return true;
@@ -44,7 +47,6 @@ void HelloWorld::OnNotify(int nEvent, int nParam)
 	switch (nEvent) {
 	case FBACTION_LOGIN:
 	case FBACTION_LOGIN_TO_SHARE:
-	case FBACTION_LOGIN_TO_SEND_REQUEST:
 	case FBACTION_LOGOUT:
 	case FBACTION_IMAGE_UPDATE:
 	case FBACTION_REQ_MYINFO:
@@ -61,11 +63,13 @@ void HelloWorld::UpdateView()
 	m_pBtnLogin->setEnabled(bLogin ? false : true);
 	m_pBtnLogout->setEnabled(bLogin ? true : false);
 
+	m_pNodeUpdate->removeAllChildren();
+
 	CCPoint ptOffset;
 	auto vecFriend = FacebookMgr::GetInstance()->GetFriendsInfo();
 	int nCount = 0;
 	for (auto it(vecFriend.begin()); it != vecFriend.end(); ++it, ++nCount) {		
-		auto pName = this->AddConfigTextLabel("FacebookFriendName", it->m_strName.c_str());
+		auto pName = this->AddConfigTextLabel(m_pNodeUpdate, "FacebookFriendName", it->m_strName.c_str());
 		UIMgr::GetInstance()->NodePositionMove(pName, ptOffset);
 
 		auto id = it->m_i64Id;
@@ -80,13 +84,13 @@ void HelloWorld::UpdateView()
 			continue;
 		}
 
-		auto pNodeImage = this->AddConfigSprite("FacebookFriendImage", strPath.c_str());
+		auto pNodeImage = this->AddConfigSprite(m_pNodeUpdate, "FacebookFriendImage", strPath.c_str());
 		UIMgr::GetInstance()->NodePositionMove(pNodeImage, ptOffset);
 		ptOffset.y += 50;
 	}
 	
 	auto myInfo = FacebookMgr::GetInstance()->GetMyselfInfo();
-	this->AddConfigTextLabel("FacebookMyName", myInfo.m_strName.c_str());
+	this->AddConfigTextLabel(m_pNodeUpdate, "FacebookMyName", myInfo.m_strName.c_str());
 }
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
@@ -137,6 +141,11 @@ void HelloWorld::OnBtnReqFriendInfo( CCObject* pObj )
 	} else {
 		TipBox("Please login first");
 	}
+}
+
+void HelloWorld::OnBtnInvite(CCObject* pObj)
+{
+	FacebookMgr::GetInstance()->InviteFriends("https://fb.me/1602961223294531", "http://cdn.cgmdigi.com/kc/res/pc/1/images/icon.png");
 }
 
 bool HelloWorldScene::OnInit( void )

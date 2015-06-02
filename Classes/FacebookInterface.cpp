@@ -12,14 +12,10 @@
 #include "platform/android/jni/JniHelper.h"
 #include <jni.h>
 #include <android/log.h>
-const char* FBJavaFriendClassName = "org/FBPlugin/FacebookPickFriendPlugin";
-const char* FBJavaLoginClassName = "org/FBPlugin/FacebookConnectPlugin";
-const char* FBJavaPostClassName = "org/FBPlugin/FacebookPostPlugin";
-const char* FBJavaSendRequestsClassName = "org/FBPlugin/FacebookSendRequestsPlugin";
-const char* FBJavaClassName = "org/FBPlugin/FacebookConnectPlugin";
+const char* FBJavaClassName = "org/Plugin/Facebook/FacebookPlugin";
 extern "C"
 {
-    void Java_org_FBPlugin_FacebookConnectPlugin_nativeCallback(JNIEnv* jEnv, jobject jObj, jint cbIndex, jstring params)
+    void Java_org_Plugin_Facebook_FacebookPlugin_nativeCallback(JNIEnv* jEnv, jobject jObj, jint cbIndex, jstring params)
     {
 		const char *pszParams = params ? jEnv->GetStringUTFChars(params, 0) : NULL;
 		FacebookMgr::GetInstance()->OnGetResponse(cbIndex, pszParams);
@@ -57,7 +53,7 @@ void FacebookInterface::login(int cbIndex, const char* scope)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 	cocos2d::JniMethodInfo t;
 	if (cocos2d::JniHelper::getStaticMethodInfo(t
-                                                , FBJavaLoginClassName
+                                                , FBJavaClassName
                                                 , "login"
                                                 , "(ILjava/lang/String;)V"))
 	{
@@ -108,45 +104,12 @@ bool FacebookInterface::isLogin( void )
 	return false;
 }
 
-const char* FacebookInterface::getStatus(void)
-{
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)	
-	cocos2d::JniMethodInfo t;
-	if (cocos2d::JniHelper::getStaticMethodInfo(t
-                                                , FBJavaClassName
-                                                , "getStatus"
-                                                , "(I)Ljava/lang/String;"))
-	{
-		jstring ret = (jstring)(t.env->CallStaticObjectMethod(t.classID, t.methodID, FBACTION_GET_STATUS));
-        t.env->DeleteLocalRef(t.classID);
-        const char* aStr= t.env->GetStringUTFChars(ret, NULL);
-        return aStr;
-	}
-#endif
-	return "";
-}
-
-void FacebookInterface::pickFriend(void)
-{
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-	cocos2d::JniMethodInfo t;
-	if (cocos2d::JniHelper::getStaticMethodInfo(t
-		, FBJavaFriendClassName
-		, "pickFriend"
-        , "(I)V"))
-	{
-		t.env->CallStaticVoidMethod(t.classID, t.methodID, FBACTION_PICK_FRIEND);
-		t.env->DeleteLocalRef(t.classID);
-	}
-#endif
-}
-
 void FacebookInterface::postStatus(const char* name,const char* caption,const char* description,const char* link,const char* picture)
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 	cocos2d::JniMethodInfo t;
 	if (cocos2d::JniHelper::getStaticMethodInfo(t
-		, FBJavaPostClassName
+		, FBJavaClassName
 		, "postStatus"
 		, "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"))
 	{
@@ -180,8 +143,8 @@ void FacebookInterface::sendRequests(void)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 	cocos2d::JniMethodInfo t;
 	if (cocos2d::JniHelper::getStaticMethodInfo(t
-		, FBJavaSendRequestsClassName
-		, "sendRequests"
+		, FBJavaClassName
+		, "gameRequests"
 		, "(I)V"))
 	{
 		t.env->CallStaticVoidMethod(t.classID, t.methodID, FBACTION_SEND_REQUESTS);
@@ -189,4 +152,24 @@ void FacebookInterface::sendRequests(void)
 	}
 #endif
 }
+
+void FacebookInterface::inviteFriends(const char *pszAppLink, const char *pszImgUrl)
+{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	cocos2d::JniMethodInfo t;
+	if (cocos2d::JniHelper::getStaticMethodInfo(t
+		, FBJavaClassName
+		, "inviteFriends"
+		, "(Ljava/lang/String;Ljava/lang/String;)V"))
+	{
+		jstring jstrAppLink = t.env->NewStringUTF(pszAppLink);
+		jstring jstrImgUrl = t.env->NewStringUTF(pszImgUrl);
+		t.env->CallStaticVoidMethod(t.classID, t.methodID, jstrAppLink, jstrImgUrl);
+		t.env->DeleteLocalRef(jstrImgUrl);
+		t.env->DeleteLocalRef(jstrAppLink);
+		t.env->DeleteLocalRef(t.classID);
+	}
+#endif
+}
+
 

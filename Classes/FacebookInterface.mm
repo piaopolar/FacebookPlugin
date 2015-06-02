@@ -44,15 +44,6 @@ void FacebookInterface::logout(void)
 	}
 }
 
-const char* FacebookInterface::getStatus(void)
-{
-	return "";
-}
-
-void FacebookInterface::pickFriend(void)
-{
-}
-
 void FBCheckLogin(void(^action)(void))
 {
 	if (FBSession.activeSession.state == FBSessionStateOpen
@@ -256,4 +247,8 @@ void FacebookInterface::request(int nIndex, const char*pszRequest, const char *p
 		const char *pszJson = [strJson UTF8String];
 		FacebookMgr::GetInstance()->OnGetResponse(nIndex, pszJson);
 	}];
+}
+
+void FacebookInterface::inviteFriends(const char *pszAppLink, const char *pszImgUrl)
+{
 }

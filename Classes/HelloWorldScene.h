@@ -21,6 +21,7 @@ public:
 
 	void OnBtnLogin(CCObject* pObj);
 	void OnBtnLogout(CCObject* pObj);
+	void OnBtnInvite(CCObject* pObj);
 	void OnBtnSendRequest(CCObject* pObj);
 	void OnBtnShareScreenShot(CCObject* pObj);
 	void OnBtnReqMyselfInfo(CCObject* pObj);
@@ -33,6 +34,7 @@ public:
     CREATE_FUNC(HelloWorld);
 
 public:
+	CCNode* m_pNodeUpdate;
 	CCMenuItem* m_pBtnLogin;
 	CCMenuItem* m_pBtnLogout;
 };
